@@ -5,6 +5,7 @@
 	<groupId>com.btgxlm.study</groupId>
 	<artifactId>parent</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<!-- 必须制定到parent的pom.xml文件 -->
 	<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 	
