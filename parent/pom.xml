@@ -5,7 +5,8 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <modules>
-  <module >
- 	..
-  </module></modules>
+  <module >../core</module>
+  <module>../user-log</module>
+  <module>../user-service</module>
+  </modules>
 </project>
