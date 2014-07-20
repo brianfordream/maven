@@ -10,7 +10,8 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-  
+  <!-- 聚合只需要写文件路径即可 -->
+  <!-- 而集成则需要指定到parent的pom.xml文件 -->
   <modules>
   <module >../core</module>
   <module>../user-log</module>
