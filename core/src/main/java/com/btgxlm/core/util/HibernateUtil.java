@@ -4,8 +4,9 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Service;
 
-
+@Service
 public class HibernateUtil {
 	private static SessionFactory buildSessionFactory(){
 	ApplicationContext context=new ClassPathXmlApplicationContext("applicationContext.xml");

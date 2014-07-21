@@ -14,7 +14,8 @@ public class TestDaoSessionFactory {
 	@Test
 	public void test(){
 		ApplicationContext context=new ClassPathXmlApplicationContext("applicationContext.xml");
-		SessionFactory sessionFactory=new DaoSessionFactory().getSessionFactory();
-		assertNotNull(sessionFactory);
+		DaoSessionFactory factory=(DaoSessionFactory) context.getBean("daotest");
+		SessionFactory sessionFactory=factory.getSessionFactory();
+		sessionFactory.openSession();
 	}
 }
