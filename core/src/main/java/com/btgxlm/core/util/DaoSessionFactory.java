@@ -8,6 +8,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class DaoSessionFactory {
+	@Resource(name="mySessionFactory")
 	private SessionFactory sessionFactory;
 	public SessionFactory getSessionFactory() {
 		ApplicationContext context=new ClassPathXmlApplicationContext("applicationContext.xml");
