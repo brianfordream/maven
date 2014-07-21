@@ -1,29 +1,42 @@
 package com.btgxlm.core.util;
 
+import javax.annotation.Resource;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.metamodel.domain.Superclass;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
+import org.hibernate.sql.Template;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.orm.hibernate3.HibernateTemplate;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 public class HibernateUtil {
 	private static SessionFactory buildSessionFactory(){
-	    Configuration configuration =new Configuration();
-	    configuration.configure();
-	    ServiceRegistry  serviceRegistry =new ServiceRegistryBuilder().applySettings(configuration.getProperties()).build();        
-	    sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+	ApplicationContext context=new ClassPathXmlApplicationContext("ApplicationContext.xml");
+	SessionFactory sessionFactory = (SessionFactory) context.getBean("sessionFactory");
 	    return sessionFactory;
 	}
 	private static SessionFactory sessionFactory=buildSessionFactory();
+
+
+	private HibernateUtil(){
+
+	}
 	public static SessionFactory getSessionFactory(){
 		return sessionFactory;
 	}
+
+
 	public static Session getSession(){
 		return sessionFactory.openSession();
 	}
 	public static void closeSession(Session session){
 		if(session!=null)
 			session.close();
-	}
-	
+	}	
 }
