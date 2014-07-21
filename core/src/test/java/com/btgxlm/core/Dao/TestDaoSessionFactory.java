@@ -11,7 +11,7 @@ import com.btgxlm.core.util.DaoSessionFactory;
 public class TestDaoSessionFactory {
 	@Test
 	public void test(){
-		SessionFactory sessionFactory=new DaoSessionFactory().GetSessionFactory();
+		SessionFactory sessionFactory=new DaoSessionFactory().getSessionFactory();
 		assertNotNull(sessionFactory);
 	}
 }
