@@ -8,13 +8,17 @@
 	<!-- 必须制定到parent的pom.xml文件 -->
 	<relativePath>../parent/pom.xml</relativePath>
 	</parent>
-	
   <artifactId>core</artifactId>
   <packaging>jar</packaging>
-
   <name>core</name>
-
-
+  <plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>   
+  </plugin>
+        <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+      </plugin>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>

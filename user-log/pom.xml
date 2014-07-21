@@ -9,7 +9,18 @@
 	</parent>
   <artifactId>user-log</artifactId>
   <packaging>jar</packaging>
-
+	<build>
+	<plugins>
+  <plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+  </plugin>
+        <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+      </plugin>
+	</plugins>
+	</build>
   <name>user-log</name>
   <dependencies>
     <dependency>

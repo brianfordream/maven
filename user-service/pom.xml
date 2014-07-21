@@ -9,9 +9,28 @@
 </parent>
   <artifactId>user-service</artifactId>
   <packaging>jar</packaging>
+<build>
+  <plugins>
+  <plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
 
+   
+  </plugin>
+  
+        <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+      </plugin>
+      
+      
+  </plugins>
+  </build>
+   
   <name>user-service</name>
   <dependencies>
+
+    
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -27,6 +46,10 @@
 <!--     		<artifactId>mysql-connector-java</artifactId> -->
 <!--     	</exclusion></exclusions> -->
     </dependency>
+    
+
+
+    
       <dependency>
     	<groupId>${project.groupId}</groupId>
     	<artifactId>core</artifactId>
