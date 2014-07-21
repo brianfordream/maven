@@ -9,7 +9,5 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import org.springframework.stereotype.Service;
 @Service
-public class DaoSessionFactory extends HibernateDaoSupport {
-	private SessionFactory sessionFactory;
-	
+public class DaoSessionFactory extends HibernateDaoSupport {	
 }
