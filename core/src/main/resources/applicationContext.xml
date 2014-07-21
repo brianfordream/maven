@@ -24,7 +24,5 @@
    			 </list>
 </property>
     </bean>
-    <bean id="daotest" class="com.btgxlm.core.util.DaoSessionFactory">
-    	<property name="sessionFactory" ref="mySessionFactory"></property>
-    </bean>
+
 </beans>
