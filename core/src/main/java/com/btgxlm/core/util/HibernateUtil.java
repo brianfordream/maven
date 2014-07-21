@@ -1,7 +1,5 @@
 package com.btgxlm.core.util;
 
-import javax.annotation.Resource;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -18,7 +16,7 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 public class HibernateUtil {
 	private static SessionFactory buildSessionFactory(){
 	ApplicationContext context=new ClassPathXmlApplicationContext("ApplicationContext.xml");
-	SessionFactory sessionFactory = (SessionFactory) context.getBean("sessionFactory");
+	SessionFactory sessionFactory = (SessionFactory) context.getBean("mySessionFactory");
 	    return sessionFactory;
 	}
 	private static SessionFactory sessionFactory=buildSessionFactory();
