@@ -6,8 +6,8 @@
      http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
          http://www.springframework.org/schema/context/spring-context.xsd">
-         <context:annotation-config/> 
-          <context:component-scan base-package="com.btgxlm.core.model*"/>
+         <context:annotation-config/>
+          <context:component-scan base-package="com.btgxlm.core.*"/>
   <bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" >
 	<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
 	<property name="url" value="jdbc:mysql://localhost:3306/tudu"/>
