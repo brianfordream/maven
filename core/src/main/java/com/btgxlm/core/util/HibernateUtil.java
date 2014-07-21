@@ -15,7 +15,7 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 public class HibernateUtil {
 	private static SessionFactory buildSessionFactory(){
-	ApplicationContext context=new ClassPathXmlApplicationContext("applicationContext.xml");
+	ApplicationContext context=new ClassPathXmlApplicationContext();
 	SessionFactory sessionFactory = (SessionFactory) context.getBean("mySessionFactory");
 	    return sessionFactory;
 	}
