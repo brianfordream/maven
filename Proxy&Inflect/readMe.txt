@@ -1,0 +1,2 @@
+Proxy包中的实现的是动态代理，在Spring中AOP就是基于这种原理实现的
+Reflect中是用反射实现的变量注入，在Spring中IOC就是基于这种原理实现的
