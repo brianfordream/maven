@@ -40,7 +40,7 @@
 		  <configuration>
 		    <scanIntervalSeconds>10</scanIntervalSeconds>
 		    <webApp>
-		      <contextPath>/hello</contextPath>
+		      <contextPath>/my</contextPath>
 		    </webApp>
 				<connectors>  
                     <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">  
