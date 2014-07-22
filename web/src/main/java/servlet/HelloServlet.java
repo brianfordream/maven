@@ -29,6 +29,7 @@ public class HelloServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.setAttribute("user", new User("yang","123","brian"));
+		request.getRequestDispatcher("/hello.jsp").forward(request, response);
 	}
 
 	/**
