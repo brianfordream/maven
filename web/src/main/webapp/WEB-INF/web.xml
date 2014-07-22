@@ -8,10 +8,10 @@
   	<servlet-name>HelloServlet</servlet-name>
   	<display-name>HelloServlet</display-name>
   	<description></description>
-  	<servlet-class>HelloServlet</servlet-class>
+  	<servlet-class>servlet.HelloServlet</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>HelloServlet</servlet-name>
-  	<url-pattern>/HelloServlet</url-pattern>
+  	<url-pattern>/hello.do</url-pattern>
   </servlet-mapping>
 </web-app>

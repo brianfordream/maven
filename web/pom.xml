@@ -5,6 +5,7 @@
     <groupId>com.btgxlm.study</groupId>
      <artifactId>parent</artifactId>
  	 <version>0.0.1-SNAPSHOT</version>
+ 	 <relativePath>../parent/pom.xml</relativePath>
   </parent>
   <artifactId>web</artifactId>
   <packaging>war</packaging>
@@ -19,6 +20,11 @@
     <dependency>
     	<groupId>javax.servlet</groupId>
 		<artifactId>javax.servlet-api</artifactId>
+    </dependency>
+    <dependency>
+    <groupId>${project.groupId}</groupId>
+    <artifactId>user-service</artifactId>
+    <version>${project.version}</version>
     </dependency>
   </dependencies>
   <build>
