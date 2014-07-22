@@ -11,9 +11,9 @@ import org.springframework.stereotype.Service;
 public class DaoSessionFactory extends HibernateDaoSupport {
 
 //	public SessionFactory getXmlSessionFactory(){
-////		ApplicationContext context=new ClassPathXmlApplicationContext("applicationContext.xml");
-////		DaoSessionFactory factory=(DaoSessionFactory) context.getBean("daotest");
-////		return factory.getSessionFactory();
-//		return this.getSessionFactory();
-//	}
+////ApplicationContext context=new ClassPathXmlApplicationContext("applicationContext.xml");
+////DaoSessionFactory factory=(DaoSessionFactory) context.getBean("daotest");
+////return factory.getSessionFactory();
+//return this.getSessionFactory();
+//}
 }

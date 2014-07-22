@@ -27,4 +27,7 @@
     <bean id="daotest" class="com.btgxlm.core.util.DaoSessionFactory">
     	<property name="sessionFactory" ref="mySessionFactory"></property>
     </bean>
+      <bean id="daosf" class="com.btgxlm.core.util.DaoSF">
+    	<property name="sessionFactory" ref="mySessionFactory"></property>
+    </bean>
 </beans>
