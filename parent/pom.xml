@@ -34,19 +34,20 @@
 	<pluginManagement>
 		<plugins>
 		<plugin>
-		  <groupId>org.eclipse.jetty</groupId>
-		  <artifactId>jetty-maven-plugin</artifactId>
-		  <version>9.2.2-SNAPSHOT</version>
+     <groupId>org.mortbay.jetty</groupId>  
+            <artifactId>jetty-maven-plugin</artifactId>  
+            <version>7.1.6.v20100715</version>  
 		  <configuration>
 		    <scanIntervalSeconds>10</scanIntervalSeconds>
 		    <webApp>
 		      <contextPath>/hello</contextPath>
 		    </webApp>
-		    <connectors>
-    				<connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
-    					<port>9999</port>
-    				</connector>
-    			</connectors>
+				<connectors>  
+                    <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">  
+                        <port>80</port>  
+                        <maxIdleTime>60000</maxIdleTime>  
+                    </connector>  
+                </connectors>  
   			</configuration>
 		</plugin>
 		<plugin>
