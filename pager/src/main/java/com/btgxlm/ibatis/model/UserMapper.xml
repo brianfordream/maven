@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.btgxlm.ibatis.model.User">
+<insert id="add" parameterType="com.btgxlm.ibatis.model.User">
+	insert into user (username,password,nickname) values (#{username},#{password},#{nickname})
+</insert>
+<delete id="delete" parameterType="com.btgxlm.ibatis.model.User">
+	delete from user where id=#{id}
+</delete>
+<update id="update" parameterType="com.btgxlm.ibatis.model.User">
+	update user set username=#{username},password=#{password},nickname=#{nickname} where id=#{id}
+</update>
+<select id="find" parameterType="com.btgxlm.ibatis.model.User" resultType="com.btgxlm.ibatis.model.User">
+	select * from user where username=#{username}
+</select>
+<!-- 动态sql语句，根据判断条件动态改变语句 -->
+<select id="findpage" parameterType="java.util.Map" resultType="com.btgxlm.ibatis.model.User">
+	select * from user 
+	<where>
+	<!-- 根据测试，第一个可以不添加and，如果第一个添加了，那么后面的都得添加。-->
+			<if test="username!=null">and username=#{username} </if>
+			<if test="nickname!=null">and nickname=#{nickname}</if>
+	</where>
+	<choose>
+		<when test="order!=null">
+			order by ${order}
+			<choose>
+			<when test="sort!=null">${sort}</when>
+			<otherwise>asc</otherwise>
+			</choose> 
+		</when>
+	</choose>
+	<if test="index!= null">
+		<choose>
+			<when test="offsize!=null">limit ${index},${offsize}</when>
+		</choose>
+	</if>
+
+</select>
+
+<select id="testMultipleAttribute" parameterType="map" resultType="com.btgxlm.ibatis.model.User">
+	select * from user where username=#{user.username}
+</select>
+</mapper>

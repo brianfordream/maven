@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.btgxlm.ibatis.model.Student">
+	<!-- autoMapping默认是true -->
+	<resultMap type="com.btgxlm.ibatis.model.Student" id="studentmap" autoMapping="true" >
+		<id column="studentid" property="id"/>
+		<result column="studentname" property="name"/>
+		<!-- 使用以下方式进行关联，最大的问题就是N+1问题，所以以下取关联的方式不会被使用 -->
+<!-- 	<association property="classmate" column="classid" javaType="com.btgxlm.ibatis.model.Classmate" select="findclass"></association> -->
+		<!-- 通过以下方式并且修改sql语句可以解决N+1问题 -->
+		<!-- 可以通过resultMap方式将映射放到单独的resultMap中，然后进行引用，也可以直接放在association中 -->
+		<association property="classmate" javaType="com.btgxlm.ibatis.model.Classmate" resultMap="ClassJoinMap">
+			<!-- 
+				<id column="c_id" property="id"/>
+				<result column="classname" property="classname"/>
+			 -->
+		</association>
+	
+	</resultMap>
+	<resultMap type="com.btgxlm.ibatis.model.Classmate" id="ClassJoinMap">
+			<id column="c_id" property="id"/>
+			<result column="classname" property="classname"/>
+	</resultMap>
+	<select id="testForeign" parameterType="java.util.Map" resultMap="studentmap" >
+	<!--  select * from student where  studentid=#{student.id}; -->	
+	select *,class.classid as c_id from student left join class on student.classid=class.classid where studentid=#{student.id}
+	</select>
+	<resultMap type="com.btgxlm.ibatis.model.Classmate" id="classmap" autoMapping="true" >
+		<id column="classid" property="id"/>
+		<result column="classname" property="classname"/>
+	</resultMap>
+	<select id="testClass" parameterType="java.util.Map" resultMap="classmap">
+		select * from class where classid=#{class.id}
+	</select>
+	<!-- 当传入类型是基本类型时，#{}中的字符串可以是任意的标记，个人感觉只是一个占位符的作用，应为传入的是基本类型，所以不会有二义性 -->
+	<select id="findclass" parameterType="int" resultMap="classmap" >
+		select * from class where classid=#{classid}
+	</select>
+</mapper> 
