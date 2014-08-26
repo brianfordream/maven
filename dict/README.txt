@@ -18,3 +18,17 @@
 		"/" 是用来定义default servlet映射的。
 		  剩下的都是用来定义详细映射的。比如： /aa/bb/cc.action
 本例通过jetty:run启动jetty容器，在浏览器中输入http://localhost/fuck/hello/find 进行访问
+		  <servlet-mapping>
+	      <servlet-name>dispatcher</servlet-name>
+	      <url-pattern>/fuck/*</url-pattern>
+	  </servlet-mapping>
+		如果web.xml 中的url pattern为
+		  <servlet-mapping>
+	      <servlet-name>dispatcher</servlet-name>
+	      <url-pattern>/</url-pattern>
+	  </servlet-mapping>
+	  那么浏览器输入：
+	  	http://localhost/hello/find即可
+Notice：
+	 用<url-pattern>/*</url-pattern>则什么都映射不到
+	 可以理解为这种pattern不符合上述的集中pattern要求，要么是/ 开头 /*结尾，要么是只有个/ .
