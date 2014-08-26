@@ -17,3 +17,4 @@
 		以前缀"*."开头的是用来做扩展映射的。
 		"/" 是用来定义default servlet映射的。
 		  剩下的都是用来定义详细映射的。比如： /aa/bb/cc.action
+本例通过jetty:run启动jetty容器，在浏览器中输入http://localhost/fuck/hello/find 进行访问
