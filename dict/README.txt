@@ -32,3 +32,5 @@
 Notice：
 	 用<url-pattern>/*</url-pattern>则什么都映射不到
 	 可以理解为这种pattern不符合上述的集中pattern要求，要么是/ 开头 /*结尾，要么是只有个/ .
+	 
+QueryWordFromWeb模拟了另一个在线查询的字典，词库来自于查询aiciba.com，通过解析文本提取出结果，并缓存到Memcached中。

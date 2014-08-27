@@ -3,6 +3,5 @@
 <html>
 <body>
 ${query } -> ${result }
-</form>
 </body>
 </html>
