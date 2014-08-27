@@ -11,8 +11,20 @@ import java.util.List;
 
 public class GrabTheCode {
 	class WordDict{
-		String wordName;
-		List<String> wordExplain =new ArrayList<String>();
+		private String wordName;
+		private List<String> wordExplain =new ArrayList<String>();
+		public String getWordName() {
+			return wordName;
+		}
+		public void setWordName(String wordName) {
+			this.wordName = wordName;
+		}
+		public List<String> getWordExplain() {
+			return wordExplain;
+		}
+		public void setWordExplain(List<String> wordExplain) {
+			this.wordExplain = wordExplain;
+		}
 	}
 	private String content;
 	public WordDict grab(String word){
@@ -23,7 +35,7 @@ public class GrabTheCode {
 			BufferedReader br=new  BufferedReader(isr);
 			String buffer;
 			String tmp;
-			dict.wordName=word;
+			dict.setWordName(word);
 			boolean flag=false;
 			while((buffer=br.readLine())!=null){
 				buffer=buffer.trim();
@@ -38,13 +50,13 @@ public class GrabTheCode {
 					int index=buffer.indexOf(">");
 					int end=buffer.lastIndexOf("<");
 					tmp=buffer.substring(index+1,end);
-					dict.wordExplain.add(tmp+" ");
+					dict.getWordExplain().add(tmp+" ");
 				}
 				if(buffer.startsWith("<label>")){
 					int index=buffer.indexOf(">");
 					int end=buffer.lastIndexOf("<");
 					tmp = buffer.substring(index+1,end);
-					dict.wordExplain.add(tmp+" ");					
+					dict.getWordExplain().add(tmp+" ");					
 				}
 				if(buffer.startsWith("</div>"))
 					break;
@@ -66,7 +78,7 @@ public class GrabTheCode {
 	public static void main(String[] args) {
 		GrabTheCode grab=new GrabTheCode();
 		WordDict dict=grab.grab("father");
-		System.out.println(dict.wordName);
-		System.out.println(dict.wordExplain);
+		System.out.println(dict.getWordName());
+		System.out.println(dict.getWordExplain());
 	}
 }
