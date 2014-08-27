@@ -3,7 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
-class WordDict{
+public class WordDict{
 	private String wordName;
 	private List<String> wordExplain =new ArrayList<String>();
 	public String getWordName() {

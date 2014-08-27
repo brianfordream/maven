@@ -8,6 +8,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.List;
+import model.WordDict;
 
 public class GrabTheCode {
 	private String content;
