@@ -23,7 +23,7 @@ public class HelloController {
 	private static MemcachedClient client;
 	static{
 		try {
-			client=new MemcachedClient(AddrUtil.getAddresses("192.168.161.137:11211 192.168.161.137:9999 "));
+			client=new MemcachedClient(AddrUtil.getAddresses("192.168.161.137:11211  "));
 			Resource resource=new ClassPathResource("dict.txt");
 			InputStreamReader reader=new InputStreamReader(resource.getInputStream(),"GB2312");
 			BufferedReader buffer=new BufferedReader(reader);
